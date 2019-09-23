@@ -2,11 +2,13 @@
 
 Simple Hello world example using [Flask](https://palletsprojects.com/p/flask/) and [Skaffold](https://skaffold.dev). 
 
+Read [Deploy Flask app to Kubernetes using Skaffold on Zarvis](https://blog-zarvis--ai.g1.zarvis.ai/blog/flask-kubernetes-skaffod/) for more details.
+
 
 ## Prerequisites
 
- - [Minikube](https://github.com/kubernetes/minikube).
- - [Skaffold](https://skaffold.dev).
+ - [Minikube](https://github.com/kubernetes/minikube)
+ - [Skaffold](https://skaffold.dev)
 
 
 ## Run locally
@@ -28,4 +30,3 @@ And browse http://localhost:8080
  - Once deployed, http endpoint will be created.
  - Try promote to production in 'deploy' tab.
  - Try configure access control in 'setting' tab.
- 
