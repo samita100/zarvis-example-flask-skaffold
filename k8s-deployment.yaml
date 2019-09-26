@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: flask-hello-world-deployment
+spec:
+  selector:
+    matchLabels:
+      app: flask-hello-world-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: flask-hello-world-app
+    spec:
+      containers:
+      - name: flask-hello-world
+        image: flask-hello-world-img

@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: flask-service
+spec:
+  ports:
+  - name: http
+    port: 8080        # Zarvis ingress default port
+    targetPort: 5000  # Flask application default port
+  selector:
+    app: flask-hello-world-app
