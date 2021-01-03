@@ -8,7 +8,7 @@ try:
   urllib.request.urlopen("https://onlineedlreg.dotm.gov.np/dlNewRegHome").getcode()
   #urllib.request.urlopen("https://google.com").getcode()
   
-  url = 'https://hooks.slack.com/services/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'
+  url = 'https://hooks.slack.com/services/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'
   myobj = {"text":"UP :)"}
   headers = {'content-type': 'application/json'}
 
@@ -19,9 +19,9 @@ try:
   
 except:
   print("Unable to open the website")
-  url1 = 'https://hooks.slack.com/services/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'
+  url1 = 'https://hooks.slack.com/services/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'
   myobj1 = {"text":"DOWN :("}
   headers1 = {'content-type': 'application/json'}
 
-  x = requests.post(url1, data=json.dumps(myobj1), headers=headers1)
-   
+  x1 = requests.post(url1, data=json.dumps(myobj1), headers=headers1)
+  print(x1.text)
