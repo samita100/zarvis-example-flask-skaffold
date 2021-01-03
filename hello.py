@@ -1,6 +1,8 @@
 from flask import Flask
+import threading
 import requests
 import json
+import time
 import os
 
 
@@ -15,8 +17,13 @@ def hello():
 
 @app.route('/open')
 def ope():
-    os.system("while true; do python3 check.py && break; done & lscpu")
+    threading.Thread(target=hop).run()
     return "Done"
+
+def hop():
+    while true:
+      os.system("python3 check.py")
+      time.sleep(5)
 
 @app.route('/proxy')
 def proxyi():
