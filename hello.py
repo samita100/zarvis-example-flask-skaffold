@@ -16,7 +16,7 @@ def hello():
 @app.route('/open')
 def ope():
     os.system("while true; do python3 check.py && break; done & lscpu")
-
+    return "Done"
 
 @app.route('/proxy')
 def proxyi():
