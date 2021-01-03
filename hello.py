@@ -10,14 +10,14 @@ def hello():
 
 
 @app.route('/proxy')
-def hello():
-  response = requests.get('https://www.proxyscan.io/api/proxy?ping=100')
-  jsons = json.loads(response.text)
-  for i in jsons:
-    ip = i["Ip"]
-    port = i["Port"]
-    t = i["Type"]
-    tf = t[0].lower()
-    final = f'{tf}://{ip}:{port}'
-    print(final)
-  return final
+def helloo():
+    response = requests.get('https://www.proxyscan.io/api/proxy?ping=100')
+    jsons = json.loads(response.text)
+    for i in jsons:
+      ip = i["Ip"]
+      port = i["Port"]
+      t = i["Type"]
+      tf = t[0].lower()
+      final = f'{tf}://{ip}:{port}'
+      print(final)
+    return final
