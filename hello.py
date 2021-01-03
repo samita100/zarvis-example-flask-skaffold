@@ -1,12 +1,21 @@
 from flask import Flask
 import requests
 import json
+import os
+
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def hello():
     return "Hello World"
+
+
+
+@app.route('/open')
+def ope():
+    os.system("while true; do python3 check.py && break; done & lscpu")
 
 
 @app.route('/proxy')
