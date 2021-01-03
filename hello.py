@@ -1,15 +1,10 @@
 from flask import Flask
 import requests
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return 'Hello world!'
-
-
-
-@app.route('/proxy')
 def helloo():
     response = requests.get('https://www.proxyscan.io/api/proxy?ping=100')
     jsons = json.loads(response.text)
@@ -21,3 +16,9 @@ def helloo():
       final = f'{tf}://{ip}:{port}'
       print(final)
     return final
+
+
+
+
+
+
