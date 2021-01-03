@@ -1,9 +1,7 @@
 from flask import Flask
-import threading
 import requests
 import json
-import time
-import os
+import urllib.request
 
 
 app = Flask(__name__)
@@ -17,13 +15,31 @@ def hello():
 
 @app.route('/open')
 def ope():
-    threading.Thread(target=hop).run()
+    try:
+      urllib.request.urlopen("https://onlineedlreg.dotm.gov.np/dlNewRegHome").getcode()
+      #urllib.request.urlopen("https://google.com").getcode()
+  
+      url = 'https://hooks.slack.com/services/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'
+      myobj = {"text":"UP :)"}
+      headers = {'content-type': 'application/json'}
+
+      x = requests.post(url, data=json.dumps(myobj), headers=headers)
+
+      print(x.text)
+  
+  
+    except:
+      print("Unable to open the website")
+      url1 = 'https://hooks.slack.com/services/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'
+      myobj1 = {"text":"DOWN :("}
+      headers1 = {'content-type': 'application/json'}
+
+      x = requests.post(url1, data=json.dumps(myobj1), headers=headers1)
     return "Done"
 
-def hop():
-    while true:
-      os.system("python3 check.py")
-      time.sleep(5)
+
+
+
 
 @app.route('/proxy')
 def proxyi():
