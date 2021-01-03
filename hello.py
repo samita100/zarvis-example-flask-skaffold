@@ -5,7 +5,12 @@ import json
 app = Flask(__name__)
 
 @app.route('/')
-def helloo():
+def hello():
+    return "Hello World"
+
+
+@app.route('/proxy')
+def proxyi():
     response = requests.get('https://www.proxyscan.io/api/proxy?ping=100')
     jsons = json.loads(response.text)
     for i in jsons:
