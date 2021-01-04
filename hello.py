@@ -15,7 +15,7 @@ def hello():
 
 @app.route('/open')
 def ope():
-    os.spawnl(os.P_DETACH, 'python3 check.py')
+    os.system('python3 check.py')
     return "Done"
 
 
